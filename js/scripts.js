@@ -24,6 +24,7 @@ $(document).ready(function(){
    });
 
    $("#show").show();
+   $("#blanks").hide();
    event.preventDefault();
  });
 
@@ -45,5 +46,7 @@ $(document).ready(function(){
    )
 
  });
-
+ $("#refresh").click(function() {
+   location.reload();
+ });
 }); //end document ready
