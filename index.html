@@ -9,14 +9,29 @@
   </head>
   <body>
     <div class="container">
+      <h1>Grocery List</h1>
       <div class="panel" id="blanks">
         <form>
           <div class="form-group">
             <label for="item1">Item 1</label>
-            <input class="form-control" id="item1"></input>
+            <input class="form-control" id="item1" placeholder="List item 1"></input>
           </div>
+          <div class="form-group">
+            <label for="item2">Item 2</label>
+            <input class="form-control" id="item2" placeholder="List item 2"></input>
+          </div>
+          <div class="form-group">
+            <label for="item3">Item 3</label>
+            <input class="form-control" id="item3" placeholder="List item 3"></input>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit!</button>
         </form>
       </div><!--blanks-->
+      <div class="panel" id="show">
+        <h1>Your Grocery List</h1>
+        <ul>
+        </ul>
+      </div><!--closes show-->
     </div><!--closes container-->
 
   </body>
