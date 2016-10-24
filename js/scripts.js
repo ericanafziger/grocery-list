@@ -1,25 +1,19 @@
-var blanks = ["item1", "item2", "item3"];
+var blanks = [1, 2, 3];
 var userInputList = [];
 
 $(document).ready(function(){
  $("#blanks form").submit(function(event){
 
    blanks.forEach(function(item){// Loop on blank array to create users array
+    var userInput = $("input#"+item).val();
 
-    //  if (item1, item2, item3) {
-     if (item1 === "") {
-       console.log("no data");
-     }
-     else {
+      if (userInput) {
+        userInputList.push(userInput);
 
+      }
+  });
+    userInputList.sort();
 
-       var userInput = $("input#"+item).val();
-       userInputList.push(userInput);
-     };
-
-     userInputList.sort();
-
-   });
    var outputList = userInputList.map(function(item) {
      return item.toUpperCase();
      console.log(outputList);
@@ -33,4 +27,23 @@ $(document).ready(function(){
    event.preventDefault();
  });
 
-});
+ $("#newRow").click(function() {
+
+   blanks.push(blanks.length + 1);
+   var newRowNumber = (blanks.length);
+   console.log(newRowNumber);
+
+   console.log(blanks);
+
+   $("#formItems").append(
+
+     "<div class='form-group'>"+
+     "<label>Item " + newRowNumber + "</label>"+
+     "<input class='form-control' id='"+newRowNumber+ "' placeholder='List item " + newRowNumber +"''></input>"+
+     "</div>"
+
+   )
+
+ });
+
+}); //end document ready
