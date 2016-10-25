@@ -1,3 +1,6 @@
 #show {
   display: none;
 }
+.form-control {
+    width: 30%;
+}
