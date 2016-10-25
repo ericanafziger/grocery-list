@@ -51,8 +51,9 @@ $(document).ready(function(){
  });
  $("#emailbutton").click(function() {
    var userEmail = $("input#email").val();
-   alert(userEmail);
-   this.href = "mailto:" + userEmail + "?subject=Groceries?body=" + outputList;
-   alert(this.href);
+   this.href = "mailto:" + userEmail + "?subject=Groceries&body=" + outputList;
+   window.open(this.href);
  });
+
+
 }); //end document ready
