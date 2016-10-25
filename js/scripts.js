@@ -1,9 +1,9 @@
 var blanks = [1, 2, 3];
 var userInputList = [];
+var outputList = [];
 
 $(document).ready(function(){
  $("#blanks form").submit(function(event){
-
    blanks.forEach(function(item){// Loop on blank array to create users array
     var userInput = $("input#"+item).val();
 
@@ -14,7 +14,7 @@ $(document).ready(function(){
   });
     userInputList.sort();
 
-   var outputList = userInputList.map(function(item) {
+   outputList = userInputList.map(function(item) {
      return item.toUpperCase();
      console.log(outputList);
    });
@@ -48,5 +48,11 @@ $(document).ready(function(){
  });
  $("#refresh").click(function() {
    location.reload();
+ });
+ $("#emailbutton").click(function() {
+   var userEmail = $("input#email").val();
+   alert(userEmail);
+   this.href = "mailto:" + userEmail + "?subject=Groceries?body=" + outputList;
+   alert(this.href);
  });
 }); //end document ready
